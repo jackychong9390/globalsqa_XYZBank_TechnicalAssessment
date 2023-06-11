@@ -8,14 +8,15 @@ using NUnit.Framework;
 
 namespace Simple001.src.PageObject
 {
-    public class BankManager_AddCustomer
+    public class BankManager_AddNewCustomer
     {
         private IWebDriver driver;
 
-        //From Homepage
-
-        [FindsBy(How = How.XPath, Using = "//button[normalize-space(text())='Bank Manager Login']")]
-        public IWebElement BankManagerLoginButton { get; set; }
+        public BankManager_AddNewCustomer(IWebDriver driver)
+        {
+            this.driver = driver;
+            PageFactory.InitElements(driver, this);
+        }
 
         //From Homepage - Bank Manager
 
@@ -48,6 +49,31 @@ namespace Simple001.src.PageObject
             this.AddCustomerPostCode.SendKeys(postCode);
         }
 
+        // Add new customers
+        public void AddNewCustomers()
+        {
+            try
+            {
+                string[][] newDataSet = null;
+
+                newDataSet = DataReader.GetSpreadSheetData("CustomerRegistration");
+
+                int newTotalColumns = newDataSet[0].Length;
+
+                for (int r = 0; r < newDataSet.Length; r++)
+                {
+                    EnterCustomerDetails(newDataSet[r][newTotalColumns - 3], newDataSet[r][newTotalColumns - 2], newDataSet[r][newTotalColumns - 1]);
+                    ClickAddCustomerButton();
+                    AcceptCustomerAddedMessagePopUp();
+
+                }
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                Console.WriteLine(e.StackTrace);
+            }
+        }
+
         public void ClickAddCustomerButton()
         {
             // Assuming the second button is the one we want to click
@@ -59,12 +85,15 @@ namespace Simple001.src.PageObject
             return successMessage.Text;
         }
 
-
-        public BankManager_AddCustomer(IWebDriver driver)
+        //Accept customer adding verify pop-up
+        public void AcceptCustomerAddedMessagePopUp()
         {
-            this.driver = driver;
-            PageFactory.InitElements(driver, this);
+            IAlert alert = driver.SwitchTo().Alert();
+            alert.Accept();
         }
 
+
+
     }
+ 
 }

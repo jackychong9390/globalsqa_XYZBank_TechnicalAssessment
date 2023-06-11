@@ -228,13 +228,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\PageObject\BankManager_CustomerTable.cs" />
-    <Compile Include="src\PageObject\BankManager_AddCustomer.cs" />
+    <Compile Include="src\PageObject\BankManager_AddNewCustomer.cs" />
     <Compile Include="src\PageObject\DropdownListAndSearch.cs" />
-    <Compile Include="src\PageObject\LoginPage.cs" />
-    <Compile Include="Tests\AddtoCart.cs" />
-    <Compile Include="Tests\BankManager_CustomerTableTest.cs" />
+    <Compile Include="src\PageObject\XYZBankHomePage.cs" />
     <Compile Include="Tests\BankManager_AddCustomerTest.cs" />
     <Compile Include="Tests\DropdownListAndSearchTest.cs" />
+    <Compile Include="Tests\BankManager_SimpleSearchAndDeleteTest.cs" />
     <Compile Include="Tests\XYZBankHomePageTest.cs" />
     <Compile Include="src\PageObject\DataReader.cs" />
   </ItemGroup>

@@ -1,20 +1,25 @@
-﻿using NUnit.Framework;
+﻿using NPOI.SS.Formula.Functions;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System;
 using Simple001.src.PageObject;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Simple001.Tests
 {
-    [TestFixture, Order(1)]
-    public class BankManager_AddCustomerTest
+    public class BankManager_SimpleSearchAndDeleteTest
     {
         private IWebDriver driver;
         private BankManager_AddNewCustomer addCustomer;
         private BankManager_CustomerTable customerTable;
         private XYZBankHomePage homePage;
-       
+
+  
 
         [SetUp]
         public void Setup()
@@ -39,46 +44,23 @@ namespace Simple001.Tests
         public void VerifyAddCustomer()
         {
             homePage.BankManagerLoginButton.Click();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-            addCustomer.AddCustomersButton.Click();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-            Console.WriteLine("Add Customer Button Click succesfully");
-            addCustomer.AddNewCustomers();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             customerTable.CustomersButton.Click();
             Console.WriteLine("Customer Button Click succesfully");
             Thread.Sleep(TimeSpan.FromSeconds(2));
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+
             // customerTable.VerifyCustomersAvailability();
 
             customerTable.DeleteCustomers();
-            Thread.Sleep(TimeSpan.FromSeconds(2));
+            Console.WriteLine("searchAndDelete method called");
+            Thread.Sleep(TimeSpan.FromSeconds(5));
 
-           
-  
+
+
 
         }
 
 
-        // A method to read excel data
-        public static void PrintSpreadSheetData(string workbookName)
-        {
-            string[][] data = DataReader.GetSpreadSheetData(workbookName);
-
-            if (data != null)
-            {
-                for (int row = 0; row < data.Length; row++)
-                {
-                    for (int column = 0; column < data[row].Length; column++)
-                    {
-                        Console.Write(data[row][column] + "\t");
-                    }
-                    Console.WriteLine();
-                }
-            }
-        }
-  
-       
 
     }
 }

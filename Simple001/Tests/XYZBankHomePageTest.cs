@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using Simple001.src.PageObject;
 using System;
+using System.Threading;
 
 namespace Simple001.Tests
 {
@@ -10,7 +11,8 @@ namespace Simple001.Tests
     public class XYZBankHomePageTest
     {
         private IWebDriver driver;
-        private BankManager_AddCustomer homePage;
+        private XYZBankHomePage homePage;
+        private BankManager_AddNewCustomer addCustomer;
 
         [SetUp]
         public void Setup()
@@ -18,7 +20,8 @@ namespace Simple001.Tests
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("https://www.globalsqa.com/angularJs-protractor/BankingProject");
-            homePage = new BankManager(driver);
+            homePage = new XYZBankHomePage(driver);
+            addCustomer = new BankManager_AddNewCustomer(driver);
         }
 
         [TearDown]
@@ -33,9 +36,6 @@ namespace Simple001.Tests
             Assert.AreEqual("XYZ Bank", pageTitle);
             Console.WriteLine("Search test ran successfully.");
         }
-
-
-
 
 
     }
