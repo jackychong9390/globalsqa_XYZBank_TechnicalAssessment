@@ -6,11 +6,11 @@ using System.Threading;
 
 namespace Simple001.src.PageObject
 {
-    public class Customer_CustomerLogin
+    public class Customer_Transaction
     {
         private IWebDriver driver;
 
-        public Customer_CustomerLogin(IWebDriver driver)
+        public Customer_Transaction(IWebDriver driver)
         {
             this.driver = driver;
             PageFactory.InitElements(driver, this);
@@ -76,7 +76,6 @@ namespace Simple001.src.PageObject
             AmountInputField.SendKeys(amount);
             Console.WriteLine("Deposit amount entered: " + amount);
             AmountToBeDepositButton.Click();
-            Thread.Sleep(TimeSpan.FromSeconds(5));
             if (depositSuccessMessage.Displayed)
             {
                 //Here assume the message is always display after the transaction
@@ -88,7 +87,7 @@ namespace Simple001.src.PageObject
         public void Withdraw(string amount)
         {
             WithdrawButton.Click();
-            Thread.Sleep(TimeSpan.FromSeconds(2));
+            Thread.Sleep(TimeSpan.FromSeconds(1));
             AmountInputField.SendKeys(amount);
             Console.WriteLine("Withdrawal amount entered: " + amount);
             AmountToBeWithdrawButton.Click();

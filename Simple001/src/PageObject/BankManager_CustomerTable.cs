@@ -44,8 +44,7 @@ namespace Simple001.src.PageObject
         {
             customerSearchBox.Clear();
             customerSearchBox.SendKeys(postCode);
-            Console.WriteLine("Keyword postCode entered: " + postCode + "\n");
-            Console.WriteLine("Now begin\n");
+          //  Console.WriteLine("Keyword postCode entered: " + postCode + "\n");
 
             var rows = table.FindElements(By.TagName("tr"));
 
@@ -65,7 +64,6 @@ namespace Simple001.src.PageObject
                     {
                         var deleteButton = row.FindElement(By.XPath(".//button[normalize-space(text())='Delete']"));
                         deleteButton.Click();
-                        Console.WriteLine("Delete button is clicked\n");
                         Console.WriteLine(firstNameCell + " " + lastNameCell + " deleted\n");
                         break; // No need to continue looping after finding a match
                     }
@@ -114,10 +112,11 @@ namespace Simple001.src.PageObject
 
             for (int r = 0; r < newDataSetVerify.Length; r++)
             {
-                Console.WriteLine(newDataSetVerify[r][newTotalColumnsVerify - 3] + "  " + newDataSetVerify[r][newTotalColumnsVerify - 2] + "  " + newDataSetVerify[r][newTotalColumnsVerify - 1]);
+              //  Console.WriteLine(newDataSetVerify[r][newTotalColumnsVerify - 3] + "  " + newDataSetVerify[r][newTotalColumnsVerify - 2] + "  " + newDataSetVerify[r][newTotalColumnsVerify - 1]);
                 searchAndDelete(newDataSetVerify[r][newTotalColumnsVerify - 3], newDataSetVerify[r][newTotalColumnsVerify - 2], newDataSetVerify[r][newTotalColumnsVerify - 1]);
                 customerSearchBox.Clear();
             }
+            Console.WriteLine("Hereby list out latest Customer list after deletion");
             PrintTableData();
         }
     }

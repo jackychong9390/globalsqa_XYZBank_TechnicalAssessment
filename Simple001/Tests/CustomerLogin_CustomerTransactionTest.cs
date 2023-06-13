@@ -13,11 +13,11 @@ using System.Threading.Tasks;
 namespace Simple001.Tests
 {
     [TestFixture, Order(2)]
-    public class Customer_CustomerLoginTest
+    public class CustomerLogin_CustomerTransactionTest
     {
         private IWebDriver driver;
         private XYZBankHomePage homePage;
-        private Customer_CustomerLogin customerLogin;
+        private Customer_Transaction customerLogin;
 
         [SetUp]
         public void Setup()
@@ -25,7 +25,7 @@ namespace Simple001.Tests
             driver = new ChromeDriver();
             driver.Navigate().GoToUrl("https://www.globalsqa.com/angularJs-protractor/BankingProject");
             homePage = new XYZBankHomePage(driver);
-            customerLogin = new Customer_CustomerLogin(driver);
+            customerLogin = new Customer_Transaction(driver);
             driver.Manage().Window.Maximize();
             Console.Write("Entering the page \n");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
@@ -38,7 +38,7 @@ namespace Simple001.Tests
         }
 
         [Test]
-        public void VerifyCustomerLogin()
+        public void CustomerTransactionTest()
         {
             homePage.CustomerLoginButton.Click();
             Console.WriteLine("Customer Login button clicked succesfully");
@@ -46,21 +46,10 @@ namespace Simple001.Tests
             Console.WriteLine("Customer Hermoine Granger Login succesfully");
             customerLogin.SelectCustomerPageDropdown();
             Console.WriteLine("1003 from dropdown selected");
-             customerLogin.PerformTransactions();
+            customerLogin.PerformTransactions();
 
-    
-
-   
-
- 
-
-
-
+  
         }
-
-
-
-
 
     }
 }

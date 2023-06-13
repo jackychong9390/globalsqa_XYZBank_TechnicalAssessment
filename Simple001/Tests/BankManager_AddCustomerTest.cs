@@ -36,7 +36,7 @@ namespace Simple001.Tests
         }
 
         [Test]
-        public void VerifyAddCustomer()
+        public void AddCustomerTest()
         {
             homePage.BankManagerLoginButton.Click();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
