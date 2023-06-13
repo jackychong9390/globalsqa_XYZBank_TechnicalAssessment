@@ -1,0 +1,24 @@
+﻿ CustomerTransactionTest
+   Source: CustomerLogin_CustomerTransactionTest.cs line 41
+   Duration: 9.4 sec
+
+  Standard Output: 
+    Entering the page 
+    Customer Login button clicked succesfully
+    Customer Hermoine Granger Login succesfully
+    1003 from dropdown selected
+    balance is 0
+    balance is 0
+    Deposit amount entered: 3000
+    balance is 3000
+    Deposit amount entered: 2000
+    balance is 5000
+    Withdrawal amount entered: 5000
+    balance is 0
+    Deposit amount entered: 10000
+    balance is 10000
+    Deposit amount entered: 15000
+    balance is 25000
+    Withdrawal amount entered: 1500
+    Final balance after all transactions: 23500
+    

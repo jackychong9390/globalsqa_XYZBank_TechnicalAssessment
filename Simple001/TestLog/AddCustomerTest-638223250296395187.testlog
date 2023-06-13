@@ -1,0 +1,64 @@
+﻿ AddCustomerTest
+   Source: BankManager_AddCustomerTest.cs line 39
+   Duration: 10.3 sec
+
+  Standard Output: 
+    Entering the page 
+    Add Customer Button Click succesfully
+    Customer Button Click succesfully
+    Jackson Frank deleted
+    
+    Christopher Connely deleted
+    
+    Hereby list out latest Customer list after deletion
+    1
+    First Name: Hermoine
+    Last Name: Granger
+    PostCode: E859AB
+    
+    2
+    First Name: Harry
+    Last Name: Potter
+    PostCode: E725JB
+    
+    3
+    First Name: Ron
+    Last Name: Weasly
+    PostCode: E55555
+    
+    4
+    First Name: Albus
+    Last Name: Dumbledore
+    PostCode: E55656
+    
+    5
+    First Name: Neville
+    Last Name: Longbottom
+    PostCode: E89898
+    
+    6
+    First Name: Frank
+    Last Name: Christopher
+    PostCode: A897N450
+    
+    7
+    First Name: Christopher
+    Last Name: Minka
+    PostCode: M098Q585
+    
+    8
+    First Name: Connely
+    Last Name: Jackson
+    PostCode: L789C349
+    
+    9
+    First Name: Minka
+    Last Name: Jackson
+    PostCode: A897N450
+    
+    10
+    First Name: Jackson
+    Last Name: Connely
+    PostCode: L789C349
+    
+    

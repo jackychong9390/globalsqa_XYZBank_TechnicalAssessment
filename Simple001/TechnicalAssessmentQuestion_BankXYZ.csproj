@@ -234,8 +234,8 @@
     <Compile Include="src\PageObject\BankManager_AddNewCustomer.cs" />
     <Compile Include="src\PageObject\Customer_Transaction.cs" />
     <Compile Include="src\PageObject\XYZBankHomePage.cs" />
-    <Compile Include="Tests\BankManager_AddCustomerTest.cs" />
-    <Compile Include="Tests\CustomerLogin_CustomerTransactionTest.cs" />
+    <Compile Include="src\Tests\BankManager_AddCustomerTest.cs" />
+    <Compile Include="src\Tests\CustomerLogin_CustomerTransactionTest.cs" />
     <Compile Include="src\PageObject\DataReader.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -247,10 +247,10 @@
     <None Include="datasheet\Customer_1003_Transactions.xlsx" />
     <None Include="datasheet\DeleteCustomers.xlsx" />
     <None Include="packages.config" />
+    <None Include="TestLog\AddCustomerTest-638223250296395187.testlog" />
+    <None Include="TestLog\CustomerTransactionTest-638223249705298927.testlog" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TestLog\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
