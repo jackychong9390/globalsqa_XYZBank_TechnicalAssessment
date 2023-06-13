@@ -23,5 +23,8 @@ namespace Simple001.src.PageObject
         [FindsBy(How = How.XPath, Using = "//button[normalize-space(text())='Bank Manager Login']")]
         public IWebElement BankManagerLoginButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//button[normalize-space(text())='Customer Login']")]
+        public IWebElement CustomerLoginButton { get; set; }
+
     }
 }

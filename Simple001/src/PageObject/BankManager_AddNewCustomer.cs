@@ -49,7 +49,7 @@ namespace Simple001.src.PageObject
             this.AddCustomerPostCode.SendKeys(postCode);
         }
 
-        // Add new customers
+        // Add new customers based from the Sheet Data
         public void AddNewCustomers()
         {
             try
@@ -95,5 +95,5 @@ namespace Simple001.src.PageObject
 
 
     }
- 
+
 }

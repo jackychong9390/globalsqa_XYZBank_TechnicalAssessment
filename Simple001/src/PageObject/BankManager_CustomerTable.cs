@@ -37,12 +37,6 @@ namespace Simple001.src.PageObject
         private IWebElement customerSearchBox { get; set; }
 
 
-        [FindsBy(How = How.XPath, Using = "(//button[normalize-space(text())='Delete'])[1]")]
-        private IWebElement deleteCustomerButtonFirstRow { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "(//button[normalize-space(text())='Delete'])[2]")]
-        private IWebElement deleteCustomerButtonSecondRow { get; set; }
-
         [FindsBy(How = How.XPath, Using = "//table[@class='table table-bordered table-striped']")]
         private IWebElement table { get; set; }
 

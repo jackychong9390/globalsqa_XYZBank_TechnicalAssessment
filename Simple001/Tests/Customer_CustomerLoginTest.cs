@@ -1,4 +1,4 @@
-﻿using NPOI.SS.Formula.Functions;
+﻿using Microsoft.Graph.Models;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -12,23 +12,20 @@ using System.Threading.Tasks;
 
 namespace Simple001.Tests
 {
-    public class BankManager_SimpleSearchAndDeleteTest
+    [TestFixture, Order(2)]
+    public class Customer_CustomerLoginTest
     {
         private IWebDriver driver;
-        private BankManager_AddNewCustomer addCustomer;
-        private BankManager_CustomerTable customerTable;
         private XYZBankHomePage homePage;
-
-  
+        private Customer_CustomerLogin customerLogin;
 
         [SetUp]
         public void Setup()
         {
             driver = new ChromeDriver();
             driver.Navigate().GoToUrl("https://www.globalsqa.com/angularJs-protractor/BankingProject");
-            addCustomer = new BankManager_AddNewCustomer(driver);
             homePage = new XYZBankHomePage(driver);
-            customerTable = new BankManager_CustomerTable(driver);
+            customerLogin = new Customer_CustomerLogin(driver);
             driver.Manage().Window.Maximize();
             Console.Write("Entering the page \n");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
@@ -41,24 +38,27 @@ namespace Simple001.Tests
         }
 
         [Test]
-        public void VerifyAddCustomer()
+        public void VerifyCustomerLogin()
         {
-            homePage.BankManagerLoginButton.Click();
-            customerTable.CustomersButton.Click();
-            Console.WriteLine("Customer Button Click succesfully");
-            Thread.Sleep(TimeSpan.FromSeconds(2));
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            homePage.CustomerLoginButton.Click();
+            Console.WriteLine("Customer Login button clicked succesfully");
+            customerLogin.SelectCustomerToLogin();
+            Console.WriteLine("Customer Hermoine Granger Login succesfully");
+            customerLogin.SelectCustomerPageDropdown();
+            Console.WriteLine("1003 from dropdown selected");
+             customerLogin.PerformTransactions();
 
-            // customerTable.VerifyCustomersAvailability();
+    
 
-            customerTable.DeleteCustomers();
-            Console.WriteLine("searchAndDelete method called");
-            Thread.Sleep(TimeSpan.FromSeconds(5));
+   
 
+ 
 
 
 
         }
+
+
 
 
 
